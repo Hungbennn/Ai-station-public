@@ -14,6 +14,103 @@ Pull Request. Chưa biết làm gì thì xem [ROADMAP.md](ROADMAP.md).
 Việc nội bộ của người chủ trạm được theo dõi bằng [Beads](docs/BEADS.md). Với cộng đồng, **GitHub Issues là nơi
 nhận việc và báo lỗi**.
 
+## Thêm feature
+
+Sửa lỗi thì cứ làm theo quy trình trên. **Feature mới thì bàn trước, code sau**, để bạn khỏi làm cả tuần rồi PR
+không được nhận.
+
+### Bốn bước
+
+1. **Mở issue đề xuất** bằng mẫu "Ý tưởng hoặc nhận việc". Nói rõ: vấn đề muốn giải quyết, cách định làm, có chạm
+   sáu bất biến không. Ý tưởng sẵn có nằm ở [ROADMAP.md](ROADMAP.md), mục "Mục tiêu gần" và "Ý tưởng lớn".
+2. **Chờ người bảo trì trả lời.** Người bảo trì giữ hướng sản phẩm: có thể nhận, đề nghị đổi cách làm, hoặc từ chối
+   nếu feature rơi vào phần dự án chủ động không làm (xem ROADMAP mục "Ngoài phạm vi hiện tại").
+3. **Feature lớn thì viết đề xuất OpenSpec** và mở PR chỉ chứa đề xuất đó. Duyệt xong mới code.
+4. **Code + test → mở PR → review → merge.** PR code nhắc tới issue và đề xuất đã duyệt.
+
+### Thế nào là lớn, thế nào là nhỏ
+
+| Nhỏ: xong bước 2 là code được | Lớn: cần đề xuất OpenSpec ở bước 3 |
+| --- | --- |
+| Thêm một nút, một cột, một bộ lọc trên dashboard | Đổi luồng giao việc, kiểm lại, QC, mở PR |
+| Thêm một loại tin Telegram | Thêm loại agent mới, thêm hệ ngoài mới |
+| Hiệu ứng, bố cục văn phòng 3D | Chạm quyền, cách ly, bí mật, Keychain, passkey |
+| Cải thiện thông báo lỗi, tài liệu | Đổi cấu trúc dữ liệu (SQLite, LanceDB) hay API |
+
+Còn phân vân thì hỏi trong issue.
+
+### Viết đề xuất OpenSpec
+
+Quy ước đầy đủ ở [docs/OPENSPEC.md](docs/OPENSPEC.md). Repo ghim bản `@fission-ai/openspec@1.14.0`, gọi qua `npx`,
+không cần cài:
+
+```bash
+DO_NOT_TRACK=1 npx -y @fission-ai/openspec@1.14.0 new change ten-feature-cua-ban
+DO_NOT_TRACK=1 npx -y @fission-ai/openspec@1.14.0 validate ten-feature-cua-ban --strict
+```
+
+Một đề xuất nằm trong `openspec/changes/<ten-feature>/`:
+
+| File | Trả lời | Bắt buộc |
+| --- | --- | --- |
+| `proposal.md` | Vì sao làm, đổi gì, **không** làm gì | Có |
+| `specs/<nang-luc>/spec.md` | Hệ thống phải cư xử ra sao, dưới dạng Requirement và Scenario | Có |
+| `design.md` | Làm thế nào, khi chạm nhiều package, dữ liệu, bảo mật hay hệ ngoài | Khi cần |
+| `tasks.md` | Các mốc nghiệm thu, mỗi mốc nói cách kiểm chứng | Có |
+
+Viết tiếng Việt; giữ tiếng Anh cho tiêu đề cấu trúc (`## ADDED Requirements`, `### Requirement:`,
+`#### Scenario:`) và từ khoá SHALL/MUST. Scenario phải có **đúng bốn dấu `#`**: ba dấu là hỏng mà không báo lỗi.
+Chỗ nào quy ước nội bộ bắt ghi mã bead, bạn ghi **số issue GitHub**.
+
+Ví dụ thu gọn cho một feature tưởng tượng:
+
+`openspec/changes/van-phong-an-mung-merge/proposal.md`
+
+```markdown
+# Proposal — Văn phòng ăn mừng khi PR được merge
+
+Issue: #42
+
+## Why
+Màn Văn phòng chỉ cho thấy agent đang làm gì. Khi việc xong và PR được merge thì không có gì
+xảy ra, người xem phải mở trang Phê duyệt mới biết.
+
+## What Changes
+- Khi trạm xác minh một PR đã merge, nhân vật của khe đã code bead đó nhảy lên một lần,
+  kèm bong bóng "đã merge".
+- Chế độ "Giảm chuyển động" bật thì chỉ hiện bong bóng, không nhảy.
+
+## Capabilities
+### New Capabilities
+- `van-phong`: màn Văn phòng phản ứng với sự kiện merge.
+
+## Ngoài phạm vi
+- Không thêm âm thanh.
+- Không đổi luồng xác minh merge ở tram/giao_viec/.
+```
+
+`openspec/changes/van-phong-an-mung-merge/specs/van-phong/spec.md`
+
+```markdown
+## ADDED Requirements
+
+### Requirement: Văn phòng báo PR đã merge
+Màn Văn phòng SHALL cho thấy một lần khi trạm xác minh PR của một bead đã được merge.
+
+#### Scenario: Merge được xác minh
+- **WHEN** trạm ghi sự kiện PR đã merge cho bead của khe claude-1
+- **THEN** nhân vật claude-1 nhảy một lần và hiện bong bóng "đã merge" trong 5 giây
+
+#### Scenario: Đang giảm chuyển động
+- **WHEN** người xem bật "Giảm chuyển động" và một PR được xác minh đã merge
+- **THEN** chỉ hiện bong bóng, nhân vật đứng yên
+```
+
+`tasks.md` cho ví dụ trên chỉ cần vài dòng kiểu: "Test frontend chứng minh nhân vật nhảy khi có sự kiện merge" ·
+"Test chứng minh giảm chuyển động thì không nhảy" · "`npm run kiem` và `kiem-dist` xanh".
+
+Muốn xem một đề xuất thật, đầy đủ: [openspec/changes/agent-tu-cap-nhat-viec/](openspec/changes/agent-tu-cap-nhat-viec/).
+
 ## Dựng môi trường
 
 Cần macOS, Python 3.12, [uv](https://docs.astral.sh/uv/), Node 20.19+ hoặc 22.12+. Clone vào **đường dẫn không
