@@ -166,6 +166,48 @@ chỉ đơn giản là chạy thử rồi báo lỗi.
 
 Mọi đóng góp, từ sửa một lỗi chính tả tới viết lại cả một khối, đều được đón nhận.
 
+## Đứng trên vai những dự án này
+
+Trạm không tự làm lại những thứ cộng đồng đã làm tốt. Cảm ơn các dự án dưới đây. Số sao GitHub tính ngày 22/10/2026.
+
+**Phỏng theo code**
+
+| Dự án | Trạm lấy gì |
+| --- | --- |
+| [crewAI](https://github.com/crewAIInc/crewAI) ★60k | Công thức chấm điểm trí nhớ (0,5 độ liên quan + 0,3 độ mới + 0,2 độ quan trọng) và ý chia trí nhớ theo "lát" phạm vi, ở `tram/nho/cham_diem.py`, `tram/nho/nho_lai.py`. Bản quyền MIT, ghi trong [NOTICE](NOTICE). |
+
+**Quy trình làm việc**
+
+| Dự án | Trạm dùng để |
+| --- | --- |
+| [Beads](https://github.com/gastownhall/beads) ★28k | Giữ danh sách việc của từng dự án; trạm là bên đọc và ghi |
+| [OpenSpec](https://github.com/Fission-AI/OpenSpec) ★73k | Đặc tả hành vi của feature trước khi code |
+| [GitNexus](https://github.com/abhigyanpatwari/GitNexus) ★48k | Đồ thị code, soi rủi ro khi chấm cột và mở PR |
+
+**Agent mà trạm điều khiển**
+
+| Dự án | Vai trò |
+| --- | --- |
+| [Claude Code](https://github.com/anthropics/claude-code) ★153k | Agent viết spec, viết code, kiểm chéo |
+| [Codex CLI](https://github.com/openai/codex) ★130k | Agent viết code và kiểm chéo |
+
+**Nền kỹ thuật**
+
+| Dự án | Trạm dùng để |
+| --- | --- |
+| [FastAPI](https://github.com/fastapi/fastapi) ★103k | API của trạm |
+| [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) ★25k | Cổng trí nhớ cho agent |
+| [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) ★4k | Gọi Claude API khi chấm cột và gộp ký ức |
+| [LanceDB](https://github.com/lancedb/lancedb) ★12k | Kho trí nhớ dài hạn |
+| [Ollama](https://github.com/ollama/ollama) ★184k + bge-m3 của [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding) ★12k | Biến ký ức thành vector, chạy ngay trên máy |
+| [py_webauthn](https://github.com/duo-labs/py_webauthn) ★1,1k | Đăng nhập bằng passkey |
+| [Tailscale](https://github.com/tailscale/tailscale) ★38k | Nối máy làm việc với máy trạm, xác thực danh tính |
+| [Vue](https://github.com/vuejs/core) ★55k, [three.js](https://github.com/mrdoob/three.js) ★117k, [TresJS](https://github.com/Tresjs/tres) ★3,8k | Dashboard và văn phòng 3D |
+| [ccusage](https://github.com/ccusage/ccusage) ★19k | Đếm token và chi phí (tuỳ chọn) |
+
+Font [Be Vietnam Pro](https://github.com/bettergui/BeVietnamPro) và [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono)
+dùng theo giấy phép OFL, kèm trong `frontend/src/assets/fonts/`.
+
 ## Giấy phép
 
 [MIT](LICENSE). Phần phỏng theo crewAI (MIT) được ghi công trong [NOTICE](NOTICE).
