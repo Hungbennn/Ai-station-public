@@ -1,0 +1,89 @@
+/* Trang Tự động của một dự án (mockup 2026-10-18 them.css "Trang tự merge/deploy", công tắc, ba lệnh).
+   Màu chỉ dùng token. */
+.duong-dan { font-size: 13px; color: var(--chu-phu); margin-bottom: 2px; }
+.duong-dan a { color: var(--nhan); text-decoration: none; }
+.td-cong-cu { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.td-cong-cu .hang-chip { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.td-luoi { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.td-cot { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.td-h { margin: 0 0 10px; font-size: 16px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.td-h .nho { font-weight: 400; font-size: 12.5px; }
+.td-bao {
+  margin-bottom: 16px; border-left: 5px solid var(--vang); background: var(--nen-canh-bao);
+  border-color: var(--vien-canh-bao); color: var(--chu-canh-bao);
+}
+.td-bao.do { border-left-color: var(--do); background: var(--nen-estop); border-color: var(--vien-estop);
+  color: var(--chu-bang-estop); }
+.td-bao strong { display: block; font-size: 15px; margin-bottom: 4px; }
+.td-bao p { margin: 0 0 8px; font-size: 13.5px; }
+.td-bao .hang-nut { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Sẵn sàng deploy */
+.ss-deploy { border-color: var(--vien-xanh-bien); border-left: 5px solid var(--xanh-bien); }
+.ss-hang { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; align-items: center; }
+.ss-hang .tieu-de { font-weight: 650; font-size: 15.5px; }
+.ss-hang .mono { color: var(--nhan); font-size: 12.5px; }
+.ss-hang .chu-thich { grid-column: 1 / -1; margin: 0; }
+.ss-rong { color: var(--chu-phu); font-size: 13.5px; }
+
+/* Bộ đếm hỏng liên tiếp (đèn `.den-ss` của trang Cài đặt) */
+.dem-hong { display: flex; align-items: center; gap: 10px; }
+.dem-hong .den-ss { width: 14px; height: 14px; }
+.dem-hong b { font-size: 20px; font-variant-numeric: tabular-nums; }
+
+/* Chờ Đại ca */
+.ds-cho { list-style: none; margin: 0; padding: 0; }
+.ds-cho li { display: grid; grid-template-columns: 64px 1fr; gap: 4px 10px; padding: 8px 0;
+  border-bottom: 1px solid var(--vien); font-size: 13.5px; }
+.ds-cho li:last-child { border-bottom: 0; }
+.ds-cho .mono { color: var(--nhan); font-size: 12.5px; padding-top: 2px; }
+.ds-cho .ly-do { grid-column: 2; display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* Bảng lịch sử */
+.bang-ls td { vertical-align: top; }
+.bang-ls td.mono { font-size: 12.5px; white-space: nowrap; }
+.bang-ls td.mono.ma { color: var(--nhan); }
+
+/* Cài đặt: hàng có công tắc */
+.cd-hang { display: grid; grid-template-columns: 1fr auto; gap: 2px 14px; align-items: center; padding: 10px 0;
+  border-bottom: 1px solid var(--vien); }
+.cd-hang:last-child { border-bottom: 0; }
+.cd-hang .ten { font-weight: 600; font-size: 14px; }
+.cd-hang .mo-ta { grid-column: 1; font-size: 12.5px; color: var(--chu-phu); }
+.cd-hang .ben-phai { grid-row: 1 / span 2; grid-column: 2; }
+.cd-hang.chinh .ten { font-size: 15.5px; font-weight: 700; }
+.cd-hang.khoa .ten { color: var(--chu-2); }
+.cd-nhom { margin: 14px 0 2px; font-size: 12px; text-transform: uppercase; letter-spacing: .5px; color: var(--chu-phu);
+  font-weight: 600; }
+.cd-chan { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--vien-dam); font-size: 12.5px;
+  color: var(--chu-phu); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.cd-chan button { border: 0; background: none; color: var(--nhan); font-size: 12.5px; padding: 0;
+  text-decoration: underline; }
+
+/* Công tắc (role=switch) */
+.cong-tac { position: relative; width: 44px; height: 24px; border-radius: 999px; border: 1px solid var(--vien-dam);
+  background: var(--nen-2); padding: 0; flex: none; }
+.cong-tac::after { content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--the); box-shadow: 0 1px 2px #00000033; transition: left .15s; }
+.cong-tac[aria-checked="true"] { background: var(--nhan); border-color: var(--nhan); }
+.cong-tac[aria-checked="true"]::after { left: 22px; }
+.cong-tac:disabled { opacity: .45; cursor: not-allowed; }
+.cong-tac:focus-visible { outline: 2px solid var(--nhan); outline-offset: 2px; }
+
+/* Chip "luôn bật" có ổ khoá */
+.chip.khoa .bieu-tuong { width: 12px; height: 12px; stroke-width: 2; }
+
+/* Ba lệnh */
+.lenh-ds { display: flex; flex-direction: column; gap: 10px; }
+.lenh-o { display: flex; flex-direction: column; gap: 4px; }
+.lenh-o .nhan { font-size: 13px; font-weight: 600; color: var(--chu-2); display: flex; gap: 8px;
+  align-items: baseline; }
+.lenh-o .nhan .nho { font-weight: 400; font-size: 12px; }
+.lenh-o code { font-family: var(--mono); font-size: 12.5px; background: var(--nen-lenh); color: var(--chu-lenh);
+  padding: 6px 10px; border-radius: 7px; word-break: break-all; }
+.lenh-o code.trong { background: var(--nen-3); color: var(--chu-phu); border: 1px dashed var(--vien-dam); }
+.lenh-o .o { font-family: var(--mono); font-size: 12.5px; width: 100%; }
+.lenh-nut { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+.loi-tai-cho { color: var(--do); font-size: 12.5px; }
+
+@media (max-width: 1100px) { .td-luoi { grid-template-columns: 1fr; } }

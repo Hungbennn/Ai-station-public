@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ben Station — Bàn điều hành (mockup)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    { "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+    } }
+  </script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="ws">
+      <div class="ws-logo">B</div>
+      <div class="ws-ten">
+        <strong>Ben Station</strong>
+        <span class="mono">Trạm điều phối</span>
+      </div>
+      <span class="ws-huy-hieu">Bàn điều hành</span>
+    </div>
+    <nav class="menu" id="menu" aria-label="Điều hướng chính"></nav>
+    <div class="sb-day">
+      <div class="may-tram mono"><span class="cham xanh"></span>Máy trạm cục bộ <b>127.0.0.1</b></div>
+      <div class="nguoi-dung">
+        <div class="avatar">ĐC</div>
+        <div><strong>Đại ca</strong><span class="mono">Chủ trạm</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="khung">
+    <header class="thanh-tren">
+      <label class="tim">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="o-tim" type="search" placeholder="Tìm nhiệm vụ, dự án, agent phụ trách… (⌘K)">
+      </label>
+      <div class="tt-phai">
+        <span class="vien-tt mono"><span class="cham xanh"></span>Đồng bộ · quét cuối 22:14</span>
+        <button class="nut-estop" id="nut-estop" type="button" title="Dừng khẩn: trạm ngừng giao việc mới">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>
+          <span>Estop</span>
+        </button>
+      </div>
+    </header>
+    <div class="bang-estop" id="bang-estop" hidden>
+      <b>Estop đang bật</b> — trạm không giao việc mới, khe đang chạy dừng mềm sau lượt hiện tại.
+      <button type="button" id="nut-tiep-tuc">Tiếp tục</button>
+    </div>
+    <main id="trang" class="trang"></main>
+  </div>
+
+  <div class="ngan-ben" id="ngan-ben" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

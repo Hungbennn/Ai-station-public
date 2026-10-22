@@ -1,0 +1,15 @@
+{
+  "phien_ban": "1",
+  "vai": "spec",
+  "ghi_chu": "Spec chỉ ghi docs/**, không chạy mã dự án, không cài gói, không mạng. Chờ spike S4.",
+  "permissions": {
+    "defaultMode": "dontAsk",
+    "disableBypassPermissionsMode": "disable",
+    "allow": ["Read", "Glob", "Grep", "TodoWrite", "Edit(docs/**)", "Write(docs/**)",
+              "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)",
+              "Bash(git add:*)", "Bash(git rm:*)", "Bash(git mv:*)", "Bash(git commit:*)", "Bash(tram bao:*)"],
+    "deny": ["Bash(git push:*)", "Bash(git remote:*)", "Bash(git fetch:*)", "Bash(git pull:*)", "Bash(git config:*)",
+             "Bash(bd:*)", "Bash(security:*)", "Bash(curl:*)", "Bash(wget:*)", "Bash(ssh:*)", "Bash(scp:*)",
+             "Bash(nc:*)", "Bash(sudo:*)", "WebFetch", "WebSearch", "Edit(.git/**)", "Edit(.claude/**)"]
+  }
+}

@@ -1,0 +1,25 @@
+/* Trang Phê duyệt — mockup style.css "Phê duyệt" (650 → 600 theo luật độ đậm), cộng phần bản thật có (D36). */
+.ds-duyet { display: flex; flex-direction: column; gap: 10px; }
+.the-duyet { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; align-items: start; }
+.the-duyet .tren { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 12.5px; }
+.the-duyet .ma { font-family: var(--mono); color: var(--nhan); }
+.the-duyet .tieu-de { font-weight: 600; font-size: 15.5px; margin: 4px 0 2px; }
+.the-duyet .hanh-dong { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end;
+  max-width: 380px; }
+.the-duyet .gop-y { grid-column: 1 / -1; display: flex; gap: 8px; align-items: flex-start; }
+.the-duyet.he { border-left: 5px solid var(--vang); }
+.the-duyet .nho { overflow-wrap: anywhere; }
+.the-duyet ul.canh-bao { padding-left: 26px; }
+/* Dòng phụ trải hết hai cột: câu khoá, lỗi thao tác, câu "đã merge là thao tác tay", chi tiết spec. */
+.the-duyet > .dong-day, .the-duyet > .chi-tiet-spec { grid-column: 1 / -1; margin: 0; }
+.chi-tiet-spec { display: flex; flex-direction: column; gap: 6px; }
+.chi-tiet-spec p { margin: 0; }
+.chi-tiet-spec .ds-file { margin: 0; padding-left: 18px; font-size: 12.5px; color: var(--chu-2); }
+.chi-tiet-spec .lenh {
+  font-family: var(--mono); font-size: 12.5px; background: var(--nen-lenh); color: var(--chu-lenh);
+  border-radius: 8px; padding: 8px 10px; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere;
+}
+@media (max-width: 720px) {
+  .the-duyet { grid-template-columns: 1fr; }
+  .the-duyet .hanh-dong { justify-content: flex-start; }
+}

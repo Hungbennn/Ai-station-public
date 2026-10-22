@@ -1,0 +1,6 @@
+[
+  {"id": "hr-1", "title": "Sửa cắt UTF-8", "description": "File erp/app/Modules/Fin/Services/TomTatHoanTien.php", "status": "open", "issue_type": "bug", "updated_at": "2026-10-12T14:10:32Z", "labels": ["qa"]},
+  {"id": "hr-2", "title": "Chờ Đại ca: cấp quyền", "description": "", "status": "closed", "issue_type": "decision", "updated_at": "2026-10-10T01:00:00Z"},
+  {"id": "hr-3", "title": "Có nhãn cột", "description": "x", "acceptance_criteria": "Test pass", "design": "docs/x.md", "notes": "n", "status": "in_progress", "issue_type": "task", "updated_at": "2026-10-12T15:00:00Z", "labels": ["b2b", "cot:ai-lam"],
+   "dependencies": [{"issue_id": "hr-3", "depends_on_id": "hr-2", "type": "blocks"}]}
+]

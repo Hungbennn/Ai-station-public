@@ -1,0 +1,45 @@
+/* Trang Cài đặt (D19) — chép từ mockup style.css mục "Cài đặt"; .tq-ds/.tq-chip bó trong .cd-khoi. */
+.cd-luoi {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; margin-top: 16px;
+}
+.cd-luoi > .cd-khoi:first-child { grid-column: 1 / -1; }
+.cd-dau { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.cd-dau h3 { margin: 0; font-size: 16px; }
+.cd-dem { margin-left: auto; }
+.cd-lenh {
+  margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--vien-dam);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.lenh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.lenh code {
+  font-family: var(--mono); font-size: 12.5px; background: var(--nen-lenh); color: var(--chu-lenh);
+  padding: 5px 10px; border-radius: 7px; overflow-wrap: anywhere;
+}
+.sao-chep {
+  border: 1px solid var(--vien-dam); background: var(--the); border-radius: 6px; font-size: 12px; padding: 3px 8px;
+  color: var(--chu-2);
+}
+.sao-chep:hover { border-color: var(--nhan); color: var(--nhan); }
+.cd-du-an { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.cd-da { border: 1px solid var(--vien); border-radius: 10px; padding: 10px 12px; background: var(--nen-3); }
+.cd-da.mo { opacity: .6; }
+.cd-da-dau { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+.cd-da dl, .cd-dl { display: grid; grid-template-columns: 110px 1fr; gap: 6px 10px; margin: 0; font-size: 13px; }
+.cd-da dt, .cd-dl dt { color: var(--chu-phu); }
+.cd-da dd, .cd-dl dd { margin: 0; }
+.cd-da dd .mono, .cd-da dd.mono { font-size: 12.5px; }
+.cd-khoi .tq-chip { display: flex; gap: 6px; flex-wrap: wrap; }
+.cd-khoi .tq-ds { list-style: none; margin: 0; padding: 0; }
+.cd-khoi .tq-ds li {
+  display: grid; grid-template-columns: minmax(0, auto) 1fr auto; gap: 10px; align-items: center; padding: 7px 0;
+  border-bottom: 1px solid var(--vien); font-size: 13.5px;
+}
+.cd-khoi .tq-ds li:last-child { border-bottom: 0; }
+.cd-khoi .tq-ds .mono { font-size: 12.5px; }
+.cot-den { width: 28px; }
+.ma-ss { color: var(--nhan); white-space: nowrap; }
+.den-ss { display: inline-block; width: 12px; height: 12px; border-radius: 50%; }
+.den-ss.dat { background: var(--xanh); box-shadow: 0 0 0 3px #4f9a6a22; }
+.den-ss.thieu { background: var(--do); box-shadow: 0 0 0 3px #b8392b22; }
+.den-ss.cho { background: #c9c2ba; }
+@media (max-width: 1100px) { .cd-luoi { grid-template-columns: 1fr; } }

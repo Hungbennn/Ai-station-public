@@ -1,0 +1,15 @@
+{
+  "phien_ban": "1",
+  "vai": "qc",
+  "ghi_chu": "QC chỉ báo, không sửa mã: chỉ ghi docs/handovers/** (phần 4 §6.3 kiểm lại bằng diff). Chờ spike S4.",
+  "permissions": {
+    "defaultMode": "dontAsk",
+    "disableBypassPermissionsMode": "disable",
+    "allow": ["Read", "Glob", "Grep", "TodoWrite", "Edit(docs/handovers/**)", "Write(docs/handovers/**)",
+              "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)",
+              "Bash(git add:*)", "Bash(git commit:*)", "Bash(tram bao:*)"],
+    "deny": ["Bash(git push:*)", "Bash(git remote:*)", "Bash(git fetch:*)", "Bash(git pull:*)", "Bash(git config:*)",
+             "Bash(bd:*)", "Bash(security:*)", "Bash(curl:*)", "Bash(wget:*)", "Bash(ssh:*)", "Bash(scp:*)",
+             "Bash(nc:*)", "Bash(sudo:*)", "WebFetch", "WebSearch", "Edit(.git/**)", "Edit(.claude/**)"]
+  }
+}

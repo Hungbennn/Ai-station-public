@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Mockup tự tuân CSP như tram-api: không script/style nội tuyến, không URL ngoài. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'">
+  <title>Ben Station — Tự merge · tự deploy (mockup)</title>
+  <link rel="stylesheet" href="../2026-10-15-giao-dien/style.css">
+  <link rel="stylesheet" href="them.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="ws">
+      <div class="ws-logo">B</div>
+      <div class="ws-ten">
+        <strong>Ben Station</strong>
+        <span class="mono">Trạm điều phối</span>
+      </div>
+      <span class="ws-huy-hieu">Bàn điều hành</span>
+    </div>
+    <nav class="menu" id="menu" aria-label="Điều hướng chính"></nav>
+    <div class="sb-day">
+      <div class="may-tram mono"><span class="cham xanh"></span>Máy trạm cục bộ <b>127.0.0.1</b></div>
+      <div class="nguoi-dung">
+        <div class="avatar">ĐC</div>
+        <div><strong>Đại ca</strong><span class="mono">Chủ trạm</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="khung">
+    <header class="thanh-tren">
+      <label class="tim">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="o-tim" type="search" placeholder="Tìm nhiệm vụ, dự án, agent phụ trách… (⌘K)">
+      </label>
+      <div class="tt-phai">
+        <span class="vien-tt mono"><span class="cham xanh"></span>Đồng bộ · quét cuối 22:14</span>
+        <button class="nut-estop vang" id="nut-tam-dung-tram" type="button"
+          title="Tạm dừng tự merge và tự deploy của mọi dự án. Trạm vẫn giao việc, kiểm lại, QC, mở PR.">
+          <svg class="dac" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <span>Tạm dừng tự động</span>
+        </button>
+        <button class="nut-estop" id="nut-estop" type="button" title="Dừng khẩn: trạm ngừng giao việc mới">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>
+          <span>Estop</span>
+        </button>
+      </div>
+    </header>
+    <div class="bang-estop" id="bang-estop" hidden>
+      <b>Estop đang bật</b> — trạm không giao việc mới, không tự merge, không deploy; khe đang chạy dừng mềm sau lượt hiện tại.
+      <button type="button" id="nut-tiep-tuc">Tiếp tục</button>
+    </div>
+    <div class="bang-tam-dung" id="bang-tam-dung" role="status" hidden>
+      <span><b>Tự merge · tự deploy đang tạm dừng toàn trạm</b> — trạm vẫn giao việc, kiểm lại, QC và mở PR; chỉ không tự merge, không tự deploy. Việc đang deploy dở được làm nốt.</span>
+      <button type="button" id="nut-tiep-tuc-tram">Tiếp tục</button>
+    </div>
+    <main id="trang" class="trang"></main>
+  </div>
+
+  <div class="ngan-ben" id="ngan-ben" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

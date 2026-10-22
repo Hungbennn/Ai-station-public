@@ -1,0 +1,65 @@
+/* Trang Công việc + ngăn bên (mockup style.css mục "Công việc", `.ngan-ben`, `.dtg`). Độ đậm 650 → 600 (luật 4). */
+.bang-cot { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.cot {
+  background: var(--nen-3); border: 1px solid var(--vien); border-radius: 14px; padding: 12px; min-height: 340px;
+}
+.cot-dau { display: flex; align-items: center; gap: 8px; padding: 2px 4px 12px; }
+.cot-dau h3 { margin: 0; font-size: 15px; }
+.cot-dau .so {
+  margin-left: auto; font-size: 12px; font-weight: 700; color: var(--chu-2); background: var(--the);
+  border: 1px solid var(--vien); border-radius: 999px; padding: 1px 9px;
+}
+.cot-dau .so-thu {
+  width: 22px; height: 22px; border-radius: 6px; background: var(--nhan); color: #fff; display: grid;
+  place-items: center; font-size: 12px; font-weight: 800;
+}
+.cot .mo-ta-cot { margin: -6px 4px 12px; }
+.the-bead { cursor: pointer; display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+.the-bead:hover { border-color: var(--nhan); }
+.the-bead .tren { display: flex; gap: 8px; align-items: center; font-size: 12.5px; }
+.the-bead .tren .phai { margin-left: auto; white-space: nowrap; }
+.the-bead .ma { font-family: var(--mono); color: var(--nhan); font-weight: 500; white-space: nowrap; }
+.the-bead .tieu-de { font-weight: 600; font-size: 15px; line-height: 1.35; }
+.the-bead .nhan-ds { display: flex; gap: 6px; flex-wrap: wrap; }
+.the-bead .khe { font-size: 12.5px; color: var(--chu-2); display: flex; align-items: center; gap: 6px; }
+.the-bead .khe .cham { margin: 0; }
+
+/* Hàng Chưa chấm / Feature đang chạy plan / Epic — mockup không vẽ, giữ bố cục cũ (hàng thẻ ngang, D36). */
+.hang-phu { margin-bottom: 18px; }
+.hang-phu h2.muc { margin-top: 8px; }
+.day-the { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.day-the .the-bead { margin-bottom: 0; }
+
+.ngan-ben {
+  position: fixed; right: 0; top: 0; bottom: 0; width: min(460px, 100vw); background: var(--the);
+  border-left: 1px solid var(--vien-dam); box-shadow: -14px 0 40px #5a3a2222; z-index: 50; overflow-y: auto;
+  padding: 20px 22px 30px;
+}
+.ngan-ben .dong {
+  position: absolute; right: 14px; top: 12px; border: 0; background: none; font-size: 22px; color: var(--chu-phu);
+}
+.ngan-ben h2 { margin: 6px 0 6px; font-size: 21px; letter-spacing: -.3px; }
+.ngan-ben h4 {
+  margin: 18px 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .6px; color: var(--chu-phu);
+}
+/* :where → độ ưu tiên 0, để .nho / .loi / .canh-bao của chung.css vẫn thắng. */
+:where(.ngan-ben p, .ngan-ben li) { font-size: 14px; color: var(--chu-2); line-height: 1.5; }
+.ngan-ben ul, .ngan-ben ol { margin: 0; padding-left: 18px; }
+.ngan-ben a { color: var(--nhan); font-weight: 600; }
+.ngan-ben .hang-chip { display: flex; gap: 6px; flex-wrap: wrap; }
+.ngan-ben .cau-hoi { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; font-size: 14px; }
+.ngan-ben .lenh {
+  font-family: var(--mono); font-size: 12.5px; background: var(--nen-lenh); color: var(--chu-lenh);
+  border-radius: 8px; padding: 8px 10px; margin: 6px 0 0;
+}
+.ngan-ben .dtg { list-style: none; padding: 0; border-left: 2px solid var(--vien); margin-left: 4px; }
+.dtg li { padding: 3px 0 3px 12px; position: relative; overflow-wrap: anywhere; }
+.dtg li::before {
+  content: ''; position: absolute; left: -5px; top: 10px; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--nhan);
+}
+.dtg .mono { font-size: 12px; color: var(--chu-phu); margin-right: 8px; }
+.dtg strong { font-weight: 500; color: var(--chu); }
+
+@media (max-width: 900px) { .bang-cot { grid-template-columns: 1fr; } }
+.ngan-ben .truong textarea, .hop .truong textarea { font-weight: 400; }

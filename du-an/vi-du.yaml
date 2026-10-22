@@ -1,0 +1,31 @@
+ten: vi-du
+# Dự án mẫu: chỉ đọc và quét thử. Bật true sau khi đã điền hàng rào riêng và chạy thật.
+bat_ghi: false
+# Đường dẫn repo dự án trên máy chạy trạm. Sửa cho đúng máy của bạn, hoặc truyền --repo khi chạy.
+duong_dan: "/duong/dan/toi/repo-cua-ban"
+gitnexus_repo: null
+boi_canh: >
+  Web bán hàng (Laravel + Vue). Module chính trong app/Modules:
+  Auth, Cart, Catalog, Order, Pay (thanh toán), Report.
+  Quy ước repo: Beads giữ việc, docs/ giữ tri thức, ADR ở docs/decisions.
+# Luật cứng nghiệp vụ của memory (spec 1b §6.2 bước 3): tên module khớp trọn từ, phân biệt hoa thường.
+module: [Auth, Cart, Catalog, Order, Pay, Report]
+# Tên khách (tuỳ chọn): điền nếu muốn, để trống vẫn chạy.
+tu_khoa_khach: []
+hang_rao:
+  tien:
+    tu_khoa: [giá, báo giá, bảng giá, thuế, VAT, hoa hồng, hóa đơn, hoá đơn, hoàn tiền,
+              công nợ, thanh toán, đặt cọc, giảm giá, tỷ giá]
+    duong_dan: ["*app/Modules/Pay/*", "*app/Modules/Order/Pricing/*"]
+  schema:
+    tu_khoa: [migration, migrate, schema, thêm cột, đổi cột, xoá cột, xóa cột,
+              khoá ngoại, khóa ngoại, FK, index, bảng mới, đổi kiểu cột]
+    duong_dan: ["*Database/Migrations/*", "*database/migrations/*"]
+  quyen:
+    tu_khoa: [phân quyền, quyền, permission, policy, vai trò, 2FA, hai lớp,
+              đăng nhập, mật khẩu, dữ liệu cấm, bảo mật]
+    duong_dan: ["*/Policies/*", "*permissions.php"]
+  khach_thay:
+    tu_khoa: [email khách, gửi khách, thư xác nhận, trang thanh toán, website,
+              bản tiếng Anh, bản dịch, link thanh toán, khách nhìn thấy]
+    duong_dan: ["*resources/views/mail/*"]

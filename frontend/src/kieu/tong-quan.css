@@ -1,0 +1,53 @@
+/* Trang Tổng quan (D17) — chép từ mockup style.css mục "Tổng quan"; tiêu đề khối dùng .tieu-de-khoi (chung.css).
+   Các style="..." nội tuyến của mockup đổi thành lớp ở đây (CSP chặt, spec 2 §4). */
+.tq-cho { border-color: #e6c8b9; background: linear-gradient(180deg, #fffaf6, #fff); padding: 16px 18px 18px;
+  margin-bottom: 16px; }
+.tq-dau { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.tq-dau h2 { margin: 0; font-size: 19px; }
+.tq-dau .nut.chinh { margin-left: auto; }
+.tq-tong { background: var(--nhan); color: #fff; font-weight: 800; border-radius: 999px; min-width: 28px; height: 28px;
+  display: grid; place-items: center; padding: 0 9px; }
+.tq-o-cho { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.tq-o { display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; border: 1px solid var(--vien);
+  border-radius: 12px; background: #fff; text-decoration: none; color: inherit; }
+.tq-o:hover { border-color: var(--nhan); box-shadow: 0 4px 12px #6b4a3014; }
+.tq-o .so { font-size: 30px; font-weight: 800; line-height: 1.1; align-self: flex-start; padding: 0 10px;
+  border-radius: 10px; background: none; border: 0; }
+.tq-o.rong { background: var(--nen-3); }
+.tq-o.rong .so { color: var(--chu-phu); }
+.tq-o strong { font-size: 14.5px; }
+.tq-luoi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 16px;
+  align-items: start; }
+.tq-luoi-2 { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+.tq-ds { list-style: none; margin: 0; padding: 0; }
+.tq-ds li { display: grid; grid-template-columns: minmax(0, auto) 1fr auto; gap: 10px; align-items: center;
+  padding: 7px 0; border-bottom: 1px solid var(--vien); font-size: 13.5px; }
+.tq-ds li:last-child { border-bottom: 0; }
+.tq-ds .mono { font-size: 12.5px; }
+.tq-ds2 { margin-top: 8px; border-top: 1px dashed var(--vien-dam); }
+.tq-ds2 li { grid-template-columns: 1fr auto; }
+.tq-chibi { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.tq-chibi a { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11.5px;
+  color: var(--chu-2); text-decoration: none; }
+.tq-chip { display: flex; gap: 6px; flex-wrap: wrap; }
+.tq-thap { margin: 12px 0 0; font-size: 13.5px; color: var(--chu-2); background: #fcf3e2; border: 1px solid #efd8a8;
+  border-radius: 8px; padding: 7px 10px; }
+.tq-so { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+.tq-so div { display: flex; flex-direction: column; background: var(--nen-3); border: 1px solid var(--vien);
+  border-radius: 10px; padding: 8px 10px; }
+.tq-so b { font-size: 18px; }
+.tq-so .nho { font-size: 11.5px; }
+.tq-cot div { display: grid; grid-template-columns: 74px 1fr 48px; gap: 8px; align-items: center; font-size: 12.5px;
+  margin: 5px 0; }
+.tq-cot i { display: block; height: 8px; border-radius: 99px; background: var(--nhan); opacity: .75; }
+.tq-chu-thich { margin: 8px 0 0; }
+.tq-xong { color: var(--nhan); }
+.tq-dem { font-weight: 400; }
+.tq-sk td { padding: 6px 10px; font-size: 13px; }
+@media (max-width: 1100px) {
+  .tq-luoi, .tq-luoi-2 { grid-template-columns: 1fr; }
+  .tq-so { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {          /* bs-78r.8: breakpoint nhỏ nhất của mockup; 375 px đầu khối xuống hàng */
+  .tq-dau { flex-wrap: wrap; }
+}

@@ -1,0 +1,31 @@
+/* Trang Đội ngũ AI (mockup style.css "Đội ngũ AI" + style="" nội tuyến của trang.js veDoiNgu / theKhe, D20).
+   .chibi .han-muc .thanh-hm ở khe.css; .bang .chip .tt-* .nhom-nut ở chung.css. */
+.bang-diem { padding: 14px 16px 6px; }
+.bang-diem .dau-khoi { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 6px; }
+.bang-diem h2 { margin: 0; font-size: 17px; }
+.bang-diem .loc { margin-left: auto; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.bang-diem .bang tbody th { font-weight: 500; white-space: nowrap; }
+.bang-diem .chu-thich { margin: 8px 0; }
+.luoi-khe { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 14px; }
+.the-khe { display: flex; flex-direction: column; gap: 11px; }
+/* chung.css làm mờ mọi `.mo`; mockup chỉ đổi nền thẻ khe tắt / mất kết nối (chibi mờ riêng). */
+.the.the-khe.mo { opacity: 1; background: #fbf9f6; }
+.the-khe p { margin: 0; }
+.the-khe .dau { display: flex; gap: 12px; align-items: center; }
+.the-khe .dau > div { min-width: 0; }
+.the-khe .dau strong { font-size: 16px; display: block; }
+.the-khe .dau .nho { font-family: var(--mono); font-size: 11.5px; overflow-wrap: anywhere; }
+.the-khe .dau .chip { margin-left: auto; align-self: flex-start; }
+.the-khe .viec {
+  font-size: 13.5px; background: var(--nen-3); border: 1px solid var(--vien); border-radius: 8px; padding: 7px 10px;
+}
+.the-khe .viec .mono { color: var(--nhan); font-size: 12px; margin-right: 6px; }
+.the-khe .viec.cau_dao { background: var(--nen-canh-bao); border-color: var(--vien-canh-bao); }
+.the-khe .vai-phien { display: flex; gap: 14px; flex-wrap: wrap; }
+.the-khe .chan {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-top: 1px solid var(--vien); padding-top: 10px;
+}
+.the-khe .chan .nho { margin-right: auto; font-size: 12px; }
+.luat-vai { font-size: 13.5px; }
+.luat-vai .chip { margin-right: 4px; }
+.luat-vai ul { margin: 8px 0 0; padding-left: 1.2rem; }

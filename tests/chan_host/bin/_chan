@@ -1,0 +1,4 @@
+#!/bin/sh
+# Lệnh giả của bộ chạy chặn host (bs-2bd.1.18): ghi tên lệnh vào nhật ký rồi thoát 97 — không bao giờ chạy lệnh thật.
+echo "path $(basename "$0") ${PYTEST_CURRENT_TEST:--}" >> "${TRAM_CHAN_NHAT_KY:-/dev/null}"
+exit 97

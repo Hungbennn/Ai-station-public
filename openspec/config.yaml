@@ -1,0 +1,23 @@
+# Sinh bằng `openspec init --tools none --language vi` (@fission-ai/openspec@1.14.0), rồi thêm context và rules.
+# Quy ước dùng: docs/OPENSPEC.md
+schema: spec-driven
+
+context: |
+  Language: vi
+  All artifacts must be written in vi.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+  Project: ben-station — trạm điều phối nhiều agent AI (Claude Code, Codex) trên Beads, chạy trên Mac của Đại ca.
+  Gọi chủ dự án là "Đại ca". Đại ca không phải lập trình viên: viết câu ngắn, lời thường.
+  OpenSpec chỉ giữ HÀNH VI (proposal, spec, nghiệm thu). CÁCH LÀM (plan TDD có mã nguyên văn) nằm ở docs/plans/.
+  Quy ước: docs/OPENSPEC.md. Việc nằm ở Beads (bd), không ở tasks.md.
+
+rules:
+  proposal:
+    - Ghi mã bead Beads của change (vd bs-xxx) và nguồn ý Đại ca (ngày, chat hoặc quyết định D).
+    - Có mục ngoài phạm vi.
+    - Nếu chạm kill list trong docs/AGENT_RULES.md §2 thì ghi rõ mục nào.
+  design:
+    - Tích hợp ngoài phải trả lời bốn câu của docs/AGENT_RULES.md §15.
+  tasks:
+    - Mỗi task là một mốc nghiệm thu có cách kiểm chứng; không chép mã. Mã nguyên văn nằm ở plan trong docs/plans/.
+    - Dòng đầu tasks.md trỏ tới plan TDD trong docs/plans/ khi plan đã có.

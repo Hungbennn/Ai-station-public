@@ -1,0 +1,36 @@
+/* Token và nền chung (mockup style.css :root, D20/D33). Chỉ nền sáng — bỏ chế độ tối (D38). */
+:root {
+  --nen: #faf6f0; --nen-2: #f3ece2; --nen-3: #f7f1e8; --the: #ffffff;
+  --vien: #e7dccf; --vien-dam: #d6c7b6; --chu: #3b2a21; --chu-2: #6e5d50; --chu-phu: #9a8a7c;
+  --nhan: #9a3f22; --nhan-dam: #7f321a; --nhan-nhat: #f5e1d6;
+  --xanh: #4f9a6a; --vang: #c98d22; --do: #b8392b; --tim: #7563b4; --xam: #9a9189;
+  --nen-hover: #eadfcf; --nen-may: #ece3d6; --nen-huy-hieu: #ecdcc9;
+  --nen-canh-bao: #fcf3e2; --vien-canh-bao: #efd8a8; --chu-canh-bao: #8a5a0e;
+  --nen-estop: #fbefea; --vien-estop: #e0b9ab; --nen-bang-estop: #f8e1da; --chu-bang-estop: #7c2416;
+  --nen-lenh: #2f2622; --chu-lenh: #f6e9dc;
+  --xanh-bien: #3b6187; --vien-xanh-bien: #cfdcea;     /* TM-4: viền khối "Sẵn sàng deploy" (mockup them.css) */
+  --r: 10px;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: 'Be Vietnam Pro', -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: var(--sans); color: var(--chu); background: var(--nen); font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+#app { display: grid; grid-template-columns: 272px 1fr; min-height: 100vh; }
+.mono { font-family: var(--mono); }
+button { font-family: inherit; cursor: pointer; }
+a { color: var(--nhan); }
+.cham { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; vertical-align: 1px; }
+.cham.xanh { background: var(--xanh); box-shadow: 0 0 0 3px #4f9a6a22; }
+.cham.do { background: var(--do); box-shadow: 0 0 0 3px #b8392b22; }
+.cham.xam { background: var(--xam); }
+button:focus-visible, a:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible,
+[tabindex]:focus-visible { outline: 2px solid var(--nhan); outline-offset: 2px; }
+.an-chu { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+@media (max-width: 900px) { #app { grid-template-columns: 1fr; } }

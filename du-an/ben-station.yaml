@@ -1,0 +1,65 @@
+ten: ben-station
+duong_dan: "/Users/dai-ca/Developer/Ben Station"
+nhanh_chinh: main
+bat_ghi: true   # Đại ca bật 20/10: nhận yêu cầu từ máy A; chưa có thợ, giao việc + tự merge/deploy vẫn tắt
+moi_truong_kiem:
+  file: "/Users/dai-ca/Developer/Ben Station/du-an/ben-station.env.testing"
+  dich: ".env.testing"
+lenh_kiem_mac_dinh: &kiem_ben
+  - tests/chan_host/chay.sh -q tests/test_khop_lenh.py tests/test_phieu_mo_hinh.py
+  - tests/chan_host/chay.sh -q tests/test_ban_giao.py tests/test_doc_ban_giao.py
+  - tests/chan_host/chay.sh -q tests/test_do_dai_ma.py tests/test_vong_import.py
+  - npm --prefix frontend run kiem
+  - npm --prefix frontend run build
+  - npm --prefix frontend run kiem-dist
+lenh_cho_phep: *kiem_ben
+
+# Giao việc theo cỡ (bs-2bd.7) — Đại ca cho bật 21/10. Ngưỡng mặc định 2/8 file, 1/2 nhóm, 3/8 tiêu chí.
+# tests/, docs/, openspec/ chỉ tăng số file; file gốc repo không ánh xạ → thiếu dữ liệu → ít nhất vừa.
+theo_co:
+  model_nho: sonnet
+  model_lon: opus
+  lenh_ca_bo: *kiem_ben
+  nhom:
+    "tram/__init__.py": tram.__init__
+    "tram/api/": tram.api
+    "tram/ban_giao/": tram.ban_giao
+    "tram/bao_tin/": tram.bao_tin
+    "tram/beads/": tram.beads
+    "tram/cau_hinh/": tram.cau_hinh
+    "tram/cham_cot/": tram.cham_cot
+    "tram/chay_cli/": tram.chay_cli
+    "tram/chu/": tram.chu
+    "tram/cli.py": tram.cli
+    "tram/cli_danh_gia.py": tram.cli_danh_gia
+    "tram/cli_dich_vu.py": tram.cli_dich_vu
+    "tram/cli_du_an.py": tram.cli_du_an
+    "tram/cong_bo/": tram.cong_bo
+    "tram/danh_gia.py": tram.danh_gia
+    "tram/de_nghi/": tram.de_nghi
+    "tram/deploy/": tram.deploy
+    "tram/du_an/": tram.du_an
+    "tram/duong_dan.py": tram.duong_dan
+    "tram/giao_viec/": tram.giao_viec
+    "tram/han_muc/": tram.han_muc
+    "tram/keychain.py": tram.keychain
+    "tram/kiem/": tram.kiem
+    "tram/llm/": tram.llm
+    "tram/nho/": tram.nho
+    "tram/passkey/": tram.passkey
+    "tram/phieu/": tram.phieu
+    "tram/quan_kiem/": tram.quan_kiem
+    "tram/su_kien/": tram.su_kien
+    "tram/suy/": tram.suy
+    "tram/thao_tac/": tram.thao_tac
+    "tram/tho/": tram.tho
+    "tram/tu_dong/": tram.tu_dong
+    "tram/usage/": tram.usage
+    "tram/yeu_cau/": tram.yeu_cau
+    "frontend/src/": frontend
+    "frontend/": frontend
+    "cong-cu/": cong-cu
+    "vai/": vai
+    "du-an/": du-an
+    "ky-nang/": ky-nang
+    "may-a/": may-a

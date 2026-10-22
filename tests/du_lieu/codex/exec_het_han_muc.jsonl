@@ -1,0 +1,4 @@
+{"type": "thread.started", "thread_id": "0199-gia"}
+{"type": "turn.started"}
+{"type": "error", "message": "You've hit your usage limit. Upgrade or try again in 2 hours."}
+{"type": "turn.failed", "error": {"message": "You've hit your usage limit."}}

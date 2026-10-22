@@ -1,0 +1,17 @@
+.handover/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+bao-cao/
+.worktrees/
+.superpowers/
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
+.beads/proxieddb/
+
+frontend/node_modules/
+frontend/dist/

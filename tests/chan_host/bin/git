@@ -1,0 +1,29 @@
+#!/bin/sh
+# Lệnh giả `git` (bs-2bd.1.18, AGENT_RULES §11, §13 "git (chặn push)"): KHÔNG BAO GIỜ chạy `git push` thật. Đọc tuỳ chọn
+# chung như git; lệnh con dựng sẵn của git (trừ push, send-pack) → chạy thẳng git thật ($TRAM_CHAN_GIT). Còn lại —
+# push, send-pack, lệnh con không dựng sẵn (alias, cả alias trong cấu hình kho), tuỳ chọn chung lạ — → chan_host.py:
+# push dạng hẹp vào kho trong gốc tạm thì giả lập (day_gia.py), mọi thứ khác ghi nhật ký chặn và thoát 97.
+G="${TRAM_CHAN_GIT:-/usr/bin/git}"
+chan() { exec "${TRAM_CHAN_PY:-python3}" "$(dirname "$0")/../chan_host.py" git "$@"; }
+bo=0
+lenh=
+for a in "$@"; do
+  if [ "$bo" = 1 ]; then bo=0; continue; fi
+  case "$a" in
+    -C|-c|--git-dir|--work-tree|--namespace|--super-prefix|--config-env|--attr-source) bo=1 ;;
+    --git-dir=*|--work-tree=*|--namespace=*|--super-prefix=*|--config-env=*|--attr-source=*|--exec-path=*) ;;
+    --list-cmds=*|-p|-P|--paginate|--no-pager|--bare|--no-replace-objects|--no-lazy-fetch|--no-optional-locks) ;;
+    --no-advice|--literal-pathspecs|--glob-pathspecs|--noglob-pathspecs|--icase-pathspecs) ;;
+    --version|-v|--help|-h|--html-path|--man-path|--info-path|--exec-path) ;;
+    -*) chan "$@" ;;
+    *) lenh="$a"; break ;;
+  esac
+done
+[ "$bo" = 1 ] && chan "$@"
+case "$lenh" in
+  ""|push|send-pack) [ -z "$lenh" ] && exec "$G" "$@"; chan "$@" ;;
+esac
+case " ${TRAM_CHAN_DUNG_SAN:-$("$G" --list-cmds=builtins | tr '\n' ' ')} " in      # chay.sh đọc sẵn một lần
+  *" $lenh "*) exec "$G" "$@" ;;
+esac
+chan "$@"

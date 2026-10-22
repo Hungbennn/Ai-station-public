@@ -1,0 +1,3 @@
+  PID  PPID   UID  RUID USER       COMM
+23557     1   506   506 tram-khe2  /usr/sbin/distnoted
+23558     1   502   502 tram-khe1  /usr/sbin/distnoted

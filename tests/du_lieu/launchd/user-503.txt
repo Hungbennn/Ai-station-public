@@ -1,0 +1,33 @@
+user/503 = {
+	type = user
+	handle = 503
+	active count = 3
+	creator = launchctl[85554]
+	creator euid = 503
+	session = Background
+	external activation count = 1
+	security context = {
+		uid = 503
+		asid = 100172
+	}
+
+	death port = 0x0
+	in-progress bootstraps = 1
+
+	services = {
+	}
+
+	unmanaged processes = {
+	}
+
+	endpoints = {
+	}
+
+	task-special ports = {
+			 0xef33f 4       bootstrap  com.apple.xpc.launchd.domain.user.503
+			  0x2203 9          access  (unknown)
+	}
+
+
+	properties = 
+}

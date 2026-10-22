@@ -1,0 +1,9 @@
+{"_ghi_chu": "CHỈ DÙNG TRONG TEST — dựng theo tài liệu app-server và spike hạn mức 12/10 (usedPercent, windowDurationMins, resetsAt); CHƯA xác minh bằng chạy thật, chờ spike S5",
+ "plus": {"rateLimits": {"primary": {"usedPercent": 62, "windowDurationMins": 300, "resetsAt": 1791867600},
+                         "secondary": {"usedPercent": 12.5, "windowDurationMins": 10080, "resetsAt": 1792281600}}},
+ "prolite": {"rateLimits": {"primary": {"usedPercent": 91, "windowDurationMins": 10080, "resetsAt": "2026-10-18T00:00:00Z"},
+                            "secondary": null}},
+ "la": {"rateLimits": {"primary": {"usedPercent": 40, "windowDurationMins": 60, "resetsAt": 1791867600},
+                       "x": {"usedPercent": "nhieu", "windowDurationMins": 300},
+                       "y": {"usedPercent": 150, "windowDurationMins": 300},
+                       "z": {"usedPercent": 5, "windowDurationMins": 0}}}}

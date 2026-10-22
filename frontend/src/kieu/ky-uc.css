@@ -1,0 +1,96 @@
+/* Trang Ký ức — mockup style.css "Ký ức (D36)". Bỏ .ku-chan (dùng .the-chan chung);
+   .ku-tom-tat thay bằng .ku-mo-ta (D39); .tq-h → .tieu-de-khoi chung; .gc chỉ trong .ku-loc. */
+.ku-tong {
+  font-size: 15px; font-weight: 700; background: var(--nhan-nhat); color: var(--nhan); border-radius: 999px;
+  padding: 2px 10px; vertical-align: 6px; margin-left: 8px; letter-spacing: 0;
+}
+.ku-khoa-chip .bieu-tuong { width: 12px; height: 12px; stroke-width: 2; }
+.ku-luoi { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; align-items: start; }
+.ku-chinh { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ku-ray { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 72px; }
+.ku-ray .tieu-de-khoi { margin: 0; }
+.ku-loc { display: flex; flex-direction: column; gap: 10px; }
+.ku-hang { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
+.ku-tim { flex: 1 1 340px; height: 32px; }
+.ku-loc .gc {
+  white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--chu-2);
+  background: var(--the); border: 1px solid var(--vien-dam); border-radius: 8px; padding: 0 10px; height: 32px;
+  cursor: pointer;
+}
+.ku-loc .gc input { accent-color: var(--nhan); }
+.ku-pv, .ku-loc-sk { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.ku-pv > .nho { margin-right: 4px; }
+.ku-pill {
+  display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border: 1px solid var(--vien-dam);
+  background: var(--the); color: var(--chu-2); border-radius: 999px; font-size: 12.5px;
+}
+.ku-pill.mono { font-family: var(--mono); font-size: 12px; }
+.ku-pill b { font-family: var(--sans); font-weight: 700; color: var(--chu); }
+.ku-pill em {
+  font-style: normal; font-family: var(--sans); font-size: 11px; font-weight: 600; color: #9a6510;
+  background: #fbefd9; border-radius: 999px; padding: 0 6px;
+}
+.ku-pill:hover { border-color: var(--nhan); }
+.ku-pill.chon { background: var(--nhan); border-color: var(--nhan); color: #fff; }
+.ku-pill.chon b { color: #fff; }
+.ku-dem { margin: 0 2px; font-size: 12.5px; }
+.ku-bao {
+  margin: 0; font-size: 13px; color: #2f6f45; background: #e5f2e8; border: 1px solid #c4e0cc; border-radius: 8px;
+  padding: 6px 10px;
+}
+.ku-ds { display: flex; flex-direction: column; gap: 10px; }
+.ku-the { display: flex; flex-direction: column; gap: 8px; }
+.ku-the.cho { border-style: dashed; border-color: #efd8a8; background: #fffdf8; }
+.ku-tren { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.ku-nhan { font-size: 12px; color: var(--chu-phu); }
+.ku-xoa { margin-left: auto; height: 28px; padding: 0 11px; font-size: 12.5px; }
+.ku-noi-dung { margin: 0; font-size: 15px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ku-meta {
+  display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12.5px; color: var(--chu-2);
+  border-top: 1px dashed var(--vien); padding-top: 8px;
+}
+.ku-meta a { color: var(--nhan); text-decoration: none; }
+.ku-meta .ku-id { color: var(--chu-phu); font-size: 11.5px; margin-left: auto; }
+.ku-qt { display: inline-flex; align-items: center; gap: 6px; }
+.ku-qt i {
+  display: inline-block; width: 46px; height: 6px; border-radius: 99px; background: #efe7dc; overflow: hidden;
+}
+.ku-qt i b { display: block; height: 100%; background: var(--nhan); opacity: .7; }
+.pv-cach-lam { background: #e6eef6; color: #3b6187; border-color: #cfdcea; }
+.pv-nghiep-vu { background: var(--nhan-nhat); color: var(--nhan); border-color: #ecc9b8; }
+.pv-vai, .pv-chung { background: #ece8f6; color: #5a4b97; border-color: #d7d0ee; }
+.ku-dai-ca { background: #2f2622; color: #f6e9dc; border-color: #2f2622; }
+.ku-ghi { display: flex; flex-direction: column; gap: 10px; }
+.ku-ghi > .ku-o { flex: none; }
+.ku-ghi textarea { min-height: 76px; }
+.ku-o { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; color: var(--chu-2);
+  flex: 1 1 140px; }
+.ku-o > span { display: flex; justify-content: space-between; gap: 8px; }
+.ku-o .nho { font-weight: 400; font-size: 12px; }
+.ku-o select, .ku-o .o { width: 100%; font-weight: 400; }
+.ku-dich { margin: 0; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ku-ghi .canh-bao { margin: 0; }
+.ku-ghi > p.nho { margin: 0; font-size: 12.5px; }
+.ku-gui { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ku-gui .nho { font-size: 12.5px; }
+.ku-loi { color: var(--do); font-size: 12.5px; }
+.ku-sk .tieu-de-khoi { margin-bottom: 8px; }
+.ku-sk .tieu-de-khoi .nho { font-weight: 400; }
+.ku-loc-sk { margin-bottom: 8px; }
+.ku-loc-sk .ku-pill { height: 24px; font-size: 12px; padding: 0 9px; }
+.ku-dtg {
+  list-style: none; margin: 0; padding: 0 0 0 2px; border-left: 2px solid var(--vien); max-height: 640px;
+  overflow-y: auto;
+}
+.ku-dtg li { position: relative; padding: 6px 0 8px 12px; border-bottom: 1px dashed var(--vien); }
+.ku-dtg li:last-child { border-bottom: 0; }
+.ku-dtg li::before {
+  content: ''; position: absolute; left: -6px; top: 13px; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--nhan);
+}
+.ku-dtg li > div { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; font-size: 12.5px; }
+.ku-dtg a { color: var(--nhan); text-decoration: none; }
+/* D39: câu mo_ta dễ đọc (chữ thường); thiếu mo_ta thì tom_tat JSON (thêm .mono, cắt từ) */
+.ku-mo-ta { margin: 4px 0 0; font-size: 13px; line-height: 1.45; color: var(--chu-2); overflow-wrap: anywhere; }
+.ku-mo-ta.mono { font-size: 11px; word-break: break-all; }
+@media (max-width: 1100px) { .ku-luoi { grid-template-columns: 1fr; } .ku-ray { position: static; } }

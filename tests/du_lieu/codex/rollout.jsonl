@@ -1,0 +1,4 @@
+{"_ghi_chu": "CHỈ DÙNG TRONG TEST — dòng token_count của rollout-*.jsonl theo spike hạn mức 12/10 (used_percent, window_minutes, resets_at); chờ spike S5"}
+{"timestamp": "2026-10-13T02:40:00.000Z", "type": "session_meta", "payload": {"cwd": "/tmp/x"}}
+{"timestamp": "2026-10-13T02:41:10.512Z", "type": "event_msg", "payload": {"type": "token_count", "info": null, "rate_limits": {"primary": {"used_percent": 62.0, "window_minutes": 300, "resets_at": 1791867600}, "secondary": {"used_percent": 12.5, "window_minutes": 10080, "resets_at": 1792281600}}}}
+{"timestamp": "khong-phai-gio", "type": "event_msg", "payload": {"type": "token_count", "rate_limits": {"primary": {"used_percent": 5, "window_minutes": 10080, "resets_at": 1792281600}, "secondary": null}}}

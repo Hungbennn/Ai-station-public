@@ -1,0 +1,17 @@
+{
+  "phien_ban": "1",
+  "vai": "coder",
+  "ghi_chu": "Lớp bổ sung, không phải hàng rào (spec 3 §7.3 mục 3). Cú pháp quy tắc và defaultMode chờ spike S4.",
+  "permissions": {
+    "defaultMode": "dontAsk",
+    "disableBypassPermissionsMode": "disable",
+    "allow": ["Read", "Glob", "Grep", "Edit", "Write", "MultiEdit", "TodoWrite",
+              "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)",
+              "Bash(git add:*)", "Bash(git rm:*)", "Bash(git mv:*)", "Bash(git commit:*)", "Bash(tram bao:*)"],
+    "deny": ["Bash(git push:*)", "Bash(git remote:*)", "Bash(git fetch:*)", "Bash(git pull:*)", "Bash(git config:*)",
+             "Bash(bd:*)", "Bash(security:*)", "Bash(curl:*)", "Bash(wget:*)", "Bash(ssh:*)", "Bash(scp:*)",
+             "Bash(nc:*)", "Bash(sudo:*)", "Bash(npm install:*)", "Bash(composer require:*)", "Bash(pip install:*)",
+             "Bash(uv add:*)", "Bash(php artisan migrate:*)", "WebFetch", "WebSearch",
+             "Edit(.git/**)", "Edit(.claude/**)", "Edit(.mcp.json)", "Write(.claude/**)", "Write(.mcp.json)"]
+  }
+}

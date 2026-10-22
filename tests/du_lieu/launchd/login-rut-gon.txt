@@ -1,0 +1,72 @@
+gui/501 = {
+	type = login
+	handle = 100003
+	active count = 421
+	service count = 420
+	active service count = 232
+	creator = loginwindow[168]
+	creator euid = 0
+	session = Aqua
+	endpoint destination = com.apple.xpc.launchd.domain.user.501
+	auxiliary bootstrapper = com.apple.xpc.otherbsd (complete)
+	security context = {
+		uid = 501
+		asid = 100003
+	}
+
+	bringup time = 47 ms
+	death port = 0x14103
+
+	services = {
+		     462      - 	com.apple.syncdefaultsd
+		       0      0 	com.apple.DataDetectorsLocalSources
+		   32840   (jt) 	com.apple.knowledgeconstructiond
+		   45102    -11 	com.apple.sharingd
+	}
+
+	unmanaged processes = {
+		com.apple.xpc.launchd.unmanaged.com.apple.dock..37536 = {
+			active count = 3
+			dynamic endpoints = {
+			}
+			pid-local endpoints = {
+				"com.apple.tsm.portname" = {
+					port = 0xf0103
+					active = 1
+					managed = 0
+					reset = 0
+					hide = 0
+					watching = 0
+				}
+				"com.apple.axserver" = {
+					port = 0xd190b
+					active = 1
+					managed = 0
+					reset = 0
+					hide = 0
+					watching = 0
+				}
+			}
+		}
+	}
+
+	endpoints = {
+	}
+
+	externally-hosted endpoints = {
+		 0xf652f    M   A   com.apple.BKAgentService
+		       0    M   D   com.apple.FontObjectsServer
+	}
+
+	task-special ports = {
+			 0x17803 4       bootstrap  com.apple.xpc.launchd.user.domain.501.100003.Aqua
+			  0x2203 9          access  (unknown)
+	}
+
+	disabled services = {
+		"com.apple.ManagedClientAgent.enrollagent" => disabled
+		"com.apple.appleseed.seedusaged.postinstall" => disabled
+	}
+
+	properties = gui | gui login
+}

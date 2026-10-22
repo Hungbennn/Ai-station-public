@@ -1,0 +1,17 @@
+/* Trang Dự án — chép .ds-phong / .the-phong của mockup style.css (mục Văn phòng); TM-4: tên là link, hàng tự động
+   (mockup 2026-10-18 them.css `.the-phong .ten-lk`, `.the-phong .tu-dong`). */
+.ds-du-an { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.the-du-an { display: flex; flex-direction: column; gap: 8px; border-left: 6px solid var(--nhan); }
+.the-du-an:hover { border-color: var(--vien-dam); border-left-color: var(--nhan); box-shadow: 0 4px 14px #6b4a3014; }
+.the-du-an .dau { display: flex; align-items: center; gap: 8px; }
+.the-du-an .dau .nho { margin-left: auto; }
+.the-du-an .ds-chip { display: flex; flex-wrap: wrap; gap: 6px; }
+.the-du-an .ten-lk { color: inherit; text-decoration: none; font-weight: 700; font-size: 15.5px; }
+.the-du-an .ten-lk:hover { color: var(--nhan); }
+.the-du-an .tu-dong {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border-top: 1px dashed var(--vien); padding-top: 8px;
+}
+.the-du-an .tu-dong a {
+  margin-left: auto; font-size: 13px; font-weight: 600; color: var(--nhan); text-decoration: none;
+}
+.the-du-an .tu-dong a:hover { text-decoration: underline; }
